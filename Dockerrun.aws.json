@@ -10,11 +10,6 @@
       "image": "e20co/app.expansioncapitalgroup.com:develop",
       "essential": true,
       "memory": 512,
-      "command": [
-            "tail",
-            "-f",
-            "/bin/bash"
-          ],
       "portMappings": [
         {
           "hostPort": 80,

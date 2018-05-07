@@ -15,7 +15,7 @@ pipeline:
     environment_name: landing-app
     environment_update: true
     region: us-east-1
-    version_label: V1.0.3
+    version_label: Sample Application
     auto_create: true
     bucket: ecg-hello-test
     bucket_key: hello.zip

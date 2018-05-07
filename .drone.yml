@@ -10,12 +10,12 @@ pipeline:
     
   beanstalk:
     image: peloton/drone-elastic-beanstalk
-    application: BeanDroneHello
+    application: app-landing
     description: Deployed with DroneCI
-    environment_name: HelloBeanDrone
+    environment_name: landing-app
     environment_update: true
     region: us-east-1
-    version_label: ${DRONE_BUILD_NUMBER}-${DRONE_BRANCH}-${DRONE_COMMIT_MESSAGE}-beandronehello
+    version_label: V1.0.0
     auto_create: true
     bucket: ecg-hello-test
     bucket_key: hello.zip

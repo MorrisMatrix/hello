@@ -1,9 +1,13 @@
 {
   "AWSEBDockerrunVersion": 2,
+  "authentication": {
+    "bucket": "ecgdockerconfig-east",
+    "key": "config.json"
+  },
   "containerDefinitions": [
     {
-      "name": "Web1",
-      "image": "benpiper/mtwa:web",
+      "name": "app-landing",
+      "image": "e20co/app.expansioncapitalgroup.com:develop",
       "essential": true,
       "memory": 512,
       "portMappings": [

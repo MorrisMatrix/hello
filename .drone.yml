@@ -1,0 +1,23 @@
+pipeline:       
+  upload:
+    image: plugins/s3
+    source: /drone/src/github.com/MorrisMatrix/hello/hello.zip
+    target: /
+    strip_prefix: /drone/src/github.com/MorrisMatrix/hello
+    bucket: ecg-hello-test
+    region: us-east-1
+    secrets: [aws_access_key_id, aws_secret_access_key]   
+    
+  beanstalk:
+    image: peloton/drone-elastic-beanstalk
+    application: BeanDroneHello
+    description: Deployed with DroneCI
+    environment_name: HelloBeanDrone
+    environment_update: true
+    region: us-east-1
+    version_label: ${DRONE_BUILD_NUMBER}-${DRONE_BRANCH}-${DRONE_COMMIT_MESSAGE}-beandronehello
+    auto_create: true
+    bucket: ecg-hello-test
+    bucket_key: hello.zip
+    secrets: [aws_access_key_id, aws_secret_access_key]
+    

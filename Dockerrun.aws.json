@@ -7,7 +7,7 @@
   "containerDefinitions": [
     {
       "name": "app-landing",
-      "image": "e20co/ums:develop",
+      "image": "e20co/app.expansioncapitalgroup.com:develop",
       "essential": true,
       "memory": 512,
       "portMappings": [
